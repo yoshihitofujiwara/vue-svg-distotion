@@ -153,4 +153,7 @@ export default {
 	style
 ==========================================================================*/
 <style scoped>
+svg{
+	-webkit-tap-highlight-color: transparent;
+}
 </style>

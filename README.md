@@ -1,11 +1,10 @@
 # vue-svg-distotion
 
-<img src="sample.png" />
-
 <ul>
 	<li><a href="http://yoshihitofujiwara.github.io/vue-svg-distotion/index.html" target="_blank">DEMO</a></li>
 </ul>
 
+<img src="sample.png" />
 
 ___
 ## Usage
@@ -109,6 +108,16 @@ ___
 |mouseenter|event| | emit mouseenter |
 |mouseleave|event| | emit mouseleave |
 
+___
+
+## Supports
+- Chrome
+- ~~Safari~~
+- Firefox
+- Edge
+- IE 11
+- Android Chrome
+- ~~ios Safari~~
 ___
 
 
