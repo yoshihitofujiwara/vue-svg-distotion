@@ -5,6 +5,21 @@
 export const RAD2DEG = 180 / Math.PI;
 
 
+const ua = navigator.userAgent.toLowerCase();
+
+export function isPC() {
+	return ua.indexOf("windows") > -1 || ua.indexOf("intel mac os x ") > -1 && ua.indexOf("mobile") < 0;
+}
+export function isTB() {
+	return ua.indexOf("ipad") > -1 || isAndroid() && ua.indexOf("mobile") < 0;
+}
+export function isSP() {
+	return ua.indexOf("iphone") > -1 || ua.indexOf("android") > -1 && ua.indexOf("mobile") > -1;
+}
+
+
+
+
 /**
  * lerp - 線形補間
  *
@@ -16,7 +31,7 @@ export const RAD2DEG = 180 / Math.PI;
  */
 export function lerp(val, min, max) {
 	return (max - min) * val + min;
-};
+}
 
 
 /**
@@ -126,4 +141,4 @@ export function createStyle(event) {
 		from: style01,
 		to: style02
 	};
-};
+}

@@ -8,6 +8,7 @@
       class="svg"
       @mouseleave="onPassive"
       @mouseenter="onActive"
+      @touchstart="toggle"
       ref="svg"
       :image="image"
       :filter="filter"
@@ -22,6 +23,7 @@
 	script
 ==========================================================================*/
 <script>
+// import * as utils from "./assets/js/utils.js";
 import dat from "dat.gui";
 import SvgDistotion from "./components/SvgDistotion.vue";
 
@@ -55,11 +57,15 @@ export default {
         maxScale: 100
       },
       duration: 0.8,
-      ease: "Power1.easeOut"
+      ease: "Power1.easeOut",
+      isActive: false
     };
   },
 
   mounted() {
+    // console.log(utils)
+
+
     gui = new dat.GUI({ autoPlace: false });
     gui.domElement.style.position = "fixed";
     gui.domElement.style.top = "0";
@@ -142,6 +148,14 @@ export default {
     },
     onPassive() {
       this.$refs.svg.onPassive();
+    },
+    toggle(){
+      this.isActive = !this.isActive;
+      if(this.isActive){
+        this.onActive();
+      } else {
+        this.onPassive();
+      }
     }
   }
 };
@@ -152,6 +166,11 @@ export default {
 	style
 ==========================================================================*/
 <style>
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -160,11 +179,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-.svg {
+h1{
+	margin-bottom: 20px;
+}
+svg {
   width: 640px;
   height: 360px;
   cursor: pointer;
-  background: #e9e9e9;
+}
+@media all and (max-width: 768px){
+	svg {
+		width: 100vw;
+		height: 56.25vw;
+		/* height: 100%; */
+	}
 }
 </style>

@@ -5,6 +5,7 @@
   <svg
 		@mouseenter="$emit('mouseenter')"
 		@mouseleave="$emit('mouseleave')"
+		@touchstart="$emit('touchstart')"
 	>
     <filter id="distortion">
       <feTurbulence
@@ -18,7 +19,7 @@
       <feDisplacementMap
         in="SourceGraphic"
         in2="noise"
-	      :scale="scale"
+				:scale="scale"
         xChannelSelector="R"
         yChannelSelector="G"
         filterUnits="userSpaceOnUse"
