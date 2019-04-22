@@ -112,12 +112,12 @@ ___
 
 ## Supports
 - Chrome
-- ~~Safari~~
+- Safari
 - Firefox
 - Edge
 - IE 11
 - Android Chrome
-- ~~ios Safari~~
+- ios Safari
 ___
 
 

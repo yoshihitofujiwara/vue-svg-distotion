@@ -2,22 +2,39 @@
 // version: 0.0.5
 // author: yoshihito fujiwara
 
+
 export const RAD2DEG = 180 / Math.PI;
 
+export const ua = navigator.userAgent.toLowerCase();
 
-const ua = navigator.userAgent.toLowerCase();
 
+/**
+ * isPC
+ */
 export function isPC() {
-	return ua.indexOf("windows") > -1 || ua.indexOf("intel mac os x ") > -1 && ua.indexOf("mobile") < 0;
+	return ua.indexOf("windows") > -1 || ua.indexOf("intel mac os x ") > -1 && ua.indexOf("mobile") == -1;
 }
+
+/**
+ * isSD
+ */
+export function isSD() {
+	return ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("android");
+}
+
+/**
+ * isTB
+ */
 export function isTB() {
-	return ua.indexOf("ipad") > -1 || isAndroid() && ua.indexOf("mobile") < 0;
+	return ua.indexOf("ipad") > -1 || ua.indexOf("android") > -1 && ua.indexOf("mobile") < 0;
 }
+
+/**
+ * isSP
+ */
 export function isSP() {
 	return ua.indexOf("iphone") > -1 || ua.indexOf("android") > -1 && ua.indexOf("mobile") > -1;
 }
-
-
 
 
 /**
@@ -63,8 +80,6 @@ export function getNormalizeOffset(event) {
 		y: y / cy
   };
 }
-
-
 
 
 /**

@@ -23,7 +23,7 @@
 	script
 ==========================================================================*/
 <script>
-// import * as utils from "./assets/js/utils.js";
+import  * as utils from "./assets/js/utils.js";
 import dat from "dat.gui";
 import SvgDistotion from "./components/SvgDistotion.vue";
 
@@ -63,14 +63,15 @@ export default {
   },
 
   mounted() {
-    // console.log(utils)
-
-
     gui = new dat.GUI({ autoPlace: false });
     gui.domElement.style.position = "fixed";
     gui.domElement.style.top = "0";
     gui.domElement.style.right = "0";
     document.body.appendChild(gui.domElement);
+
+		if(utils.isSD()){
+			gui.close();
+		}
 
     let params = {
       size: 90,
@@ -128,7 +129,6 @@ export default {
 
     // filter
     let folderFilter = gui.addFolder("Filter");
-    folderFilter.open();
     folderFilter.add(this.filter, "type", params.type);
     folderFilter.add(this.filter, "baseFrequencyX", 0, 1).step(0.01);
     folderFilter.add(this.filter, "baseFrequencyY", 0, 1).step(0.01);
