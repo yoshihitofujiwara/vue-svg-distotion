@@ -19,7 +19,7 @@ export function isPC() {
  * isSD
  */
 export function isSD() {
-	return ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("android");
+	return ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("android") > -1;
 }
 
 /**

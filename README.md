@@ -107,6 +107,7 @@ ___
 |ease|String, Object|Power2.easeOut|Animation Easing: <a href="https://greensock.com/docs/Easing" target="_blank">GreenSock Ease</a>|
 |mouseenter|event| | emit mouseenter |
 |mouseleave|event| | emit mouseleave |
+|touchstart|event| | emit touchstart |
 
 ___
 
