@@ -87,7 +87,7 @@ export default {
 ___
 ## Options
 
-|name|type|default|description|
+|Param|Type|Default|Description|
 |----|----|----|----|
 |image|Object| | |
 |image.passive|String|undefined|<strong style="color:#f09">Required</strong> passive image path|
